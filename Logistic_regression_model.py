@@ -58,7 +58,7 @@ lines()
 
 end_time = time.time()
 training_time = end_time - start_time
-print(f'Time for training the model is {training_time}')
+print(f'Time for training the model is {training_time:.1f}s')
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
 lines()
