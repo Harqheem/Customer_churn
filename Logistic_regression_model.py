@@ -37,7 +37,6 @@ lines()
 
 # Train the model
 model = grid.best_estimator_
-model.fit(X_train_scaled, y_train)
 
 # Get the best bias and weights
 w_best = model.coef_

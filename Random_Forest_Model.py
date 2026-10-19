@@ -24,9 +24,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,  random
 # Find the best hyperparameters that could be used
 params = {'min_samples_split' : [2,10, 30, 50, 100, 200, 300, 700] , 'max_depth': [2, 4, 8, 16, 32, 64, None], 'n_estimators': [10, 50, 100, 500]}
 random_search = RandomizedSearchCV(estimator=RandomForestClassifier(random_state=42, class_weight="balanced"),param_distributions=params, n_iter=20, cv=5, scoring="roc_auc", n_jobs=-1, random_state=42)
-
 random_search.fit(X_train, y_train)
+
+# Train the model
 model = random_search.best_estimator_
+
+# Model Prediction
 y_pred = model.predict(X_test)
 
 print(f"Test accuracy: {accuracy_score(y_test, y_pred):.2%}")
