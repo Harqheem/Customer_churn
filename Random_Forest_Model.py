@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
+print('Training Starts...')
 start_time = time.time()
 # Load Data
 df = pd.read_csv('Customer-Churn-Data-cleaned.csv')
@@ -37,4 +38,5 @@ print(classification_report(y_test, y_pred))
 
 end_time = time.time()
 training_time = end_time - start_time
+print('Training ends...')
 print(f"Training Time {training_time:.1f}s")
